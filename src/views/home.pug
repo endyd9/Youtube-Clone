@@ -1,0 +1,13 @@
+extends base.pug
+include mixins/video
+
+block content
+    nav
+        ul 
+            li 
+              a(href="/videos/upload") Upload Video
+
+    each info in videos 
+        +video(info)
+    else
+        li No videos here
