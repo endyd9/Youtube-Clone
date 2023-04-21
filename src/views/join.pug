@@ -1,10 +1,18 @@
 extends base
 
-block content 
+block content
+    if errorMassage
+        span=errorMassage
     form(method="post")
-        input(placeholder="email" name="email", type="email" required)
-        input(placeholder="username" name="username", type="text" required)
-        input(placeholder="pass" name="password", type="password" required)
         input(placeholder="name" name="name", type="text" required)
+        input(placeholder="username" name="username", type="text" required)
+        input(placeholder="email" name="email", type="email" required)
+        input(placeholder="pass" name="password", type="password" required)
+        input(placeholder="ConfirmPass" name="password2", type="password2" required)
         input(placeholder="location" name="location", type="text")
         input(type="submit", value="Join")
+    
+    hr  
+    div 
+        span Already have an account? 
+        a(href="/login")  Log in Now &rarr; 
