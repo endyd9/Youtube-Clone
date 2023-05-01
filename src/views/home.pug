@@ -2,8 +2,8 @@ extends base.pug
 include mixins/video
 
 block content
-
-    each info in videos 
-        +video(info)
-    else
-        li No videos here
+    div.video-grid
+        each info in videos 
+            +video(info)
+        else
+            span.empty__massage No Videos Here
