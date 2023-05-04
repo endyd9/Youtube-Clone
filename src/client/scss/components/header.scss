@@ -4,8 +4,10 @@ header {
   justify-content: space-between;
   align-items: center;
   .header__logo {
+    position: relative;
     color: $red;
-    font-size: 38px;
+    font-size: 40px;
+    left: -15px;
   }
   ul {
     display: flex;
@@ -26,5 +28,10 @@ header {
     color: $bgc;
     padding: 5px 10px;
     border-radius: 5px;
+  }
+  .header__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
   }
 }
