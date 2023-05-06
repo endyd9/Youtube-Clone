@@ -2,8 +2,6 @@ import User from "../models/User";
 import Video from "../models/Video";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
-import { errorMonitor } from "connect-mongo";
-import { response } from "express";
 
 export const getJoin = (req, res) => res.render("join", { pageTitle: "Join" });
 export const postJoin = async (req, res) => {
@@ -61,6 +59,7 @@ export const postLogin = async (req, res) => {
   }
   req.session.loggedIn = true;
   req.session.user = user;
+  req.flash("info", `Hello!`);
   return res.redirect("/");
 };
 

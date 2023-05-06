@@ -1,0 +1,57 @@
+#recoderContanier {
+  display: flex;
+  align-items: center;
+  #preview {
+    position: relative;
+    right: 50px;
+  }
+  #actionBtn {
+    position: relative;
+    text-align: center;
+    left: 325px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgb(44, 43, 43);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+    width: 30%;
+    &:hover {
+      color: $red;
+      cursor: pointer;
+    }
+  }
+}
+#startBtn {
+  all: unset;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgb(44, 43, 43);
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: white;
+  width: 90%;
+  &:hover {
+    color: $red;
+    cursor: pointer;
+  }
+}
+input[type="submit"] {
+  all: unset;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgb(44, 43, 43);
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: white;
+  width: 90%;
+  &:hover {
+    color: $red;
+    cursor: pointer;
+  }
+}

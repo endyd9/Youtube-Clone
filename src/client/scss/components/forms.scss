@@ -22,11 +22,10 @@ input:not(input[type="range"]) {
 
 input[type="submit"],
 .social__btn {
+  display: block;
+  text-align: center;
   max-width: 420px;
   padding: 12px 20px;
   background-color: rgba($color: $red, $alpha: 0.9);
   border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  display: block;
 }

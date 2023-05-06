@@ -1,12 +1,22 @@
 extend base
 
-block content 
+block content
+    div#recoderContanier
+        div#recorder(style="display: none")
+            video#preview  
+            button#actionBtn Start Recording
     if errorMessage
         span=errorMessage
     form(method="post" enctype="multipart/form-data")
         label(for="video") Video File 
         input(type="file", name="video" accept="video/*" id="video")
+        label(for="thumb") Thumbnail File 
+        input(type="file", name="thumb" accept="image/*" id="thumb")
         input(name="title", placeholder="Title", required, type="text", maxlength=80)
         input(name="description", placeholder="Description", required, type="text", minlength=0, maxlength=100)
         input(name="hashtags", placeholder="Hashtag separated by comma", required, type="text")
+        button(type="button")#startBtn Recoring Viedo!
         input(type="submit", value="Upload Video")
+
+block scripts
+    script(src="/static/js/recorder.js") 

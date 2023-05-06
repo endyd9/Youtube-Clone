@@ -1,8 +1,9 @@
 .video-mixin {
   .video-mixin__thub {
     height: 140px;
-    width: 100%;
+    width: 120%;
     background-color: ivory;
+    background-size: cover;
     border-radius: 5px;
   }
   .video-mixin__data {
