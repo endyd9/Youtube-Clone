@@ -1,11 +1,14 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
+const JSBASE_URL = "./src/client/js/";
+
 module.exports = {
   entry: {
-    main: "./src/client/js/main.js",
-    videoPlayer: "./src/client/js/videoPlayer.js",
-    recorder: "./src/client/js/recorder.js",
+    main: JSBASE_URL + "main.js",
+    videoPlayer: JSBASE_URL + "videoPlayer.js",
+    recorder: JSBASE_URL + "recorder.js",
+    commentSection: JSBASE_URL + "commentSection.js",
   },
   plugins: [
     new MiniCssExtractPlugin({

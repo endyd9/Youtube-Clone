@@ -3,13 +3,19 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
   email: { type: String, require: true, unique: true },
-  avatarUrl: { type: String },
+  avatarUrl: {
+    type: String,
+    default: "upload/avatars/8bef8cca78a6e16bfed6791e885d1c4e",
+  },
   socialOnly: { type: Boolean, default: false },
   username: { type: String, require: true, unique: true },
   password: { type: String },
   name: { type: String, require: true },
   location: { type: String, default: "Here" },
   videos: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Video" }],
+  comments: [
+    { type: mongoose.SchemaTypes.ObjectId, required: true, ref: "Comment" },
+  ],
 });
 
 userSchema.pre("save", async function () {
