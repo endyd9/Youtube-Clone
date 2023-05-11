@@ -13,10 +13,11 @@ const addComment = (text, id) => {
   icon.className = "fas fa-comment";
   const span = document.createElement("span");
   span.innerHTML = ` ${text}`;
+  span.id = "comment";
   const span2 = document.createElement("span");
   span2.id = "deleteBtn";
   span2.className = "deleteBtn";
-  span2.innerHTML = `❌`;
+  span2.innerHTML = ` ❌`;
   span2.addEventListener("click", deleteComment);
   newComment.appendChild(icon);
   newComment.appendChild(span);
