@@ -108,7 +108,6 @@ export const search = async (req, res) => {
 
 export const refgisterView = async (req, res) => {
   const { id } = req.params;
-  console.log(req.params);
   const video = await Video.findById(id);
 
   if (!video) {
@@ -121,11 +120,12 @@ export const refgisterView = async (req, res) => {
 
 export const createComment = async (req, res) => {
   const {
-    session: { user },
+    session: {
+      user: { _id },
+    },
     body: { text },
     params: { id },
   } = req;
-
   const video = await Video.findById(id);
 
   if (!video) {
@@ -134,9 +134,12 @@ export const createComment = async (req, res) => {
 
   const comment = await Comment.create({
     text,
-    owner: user._id,
+    owner: _id,
     video: id,
   });
+  const user = await User.findById(_id);
+  user.comments.push(comment._id);
+  user.save();
   video.comments.push(comment._id);
   video.save();
   return res.status(201).json({ newCommentId: comment._id });
