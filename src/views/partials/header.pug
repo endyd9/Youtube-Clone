@@ -15,9 +15,9 @@ header
                             span 😃
                         else
                             if loggedInUser.avatarUrl.includes("github")
-                                img.header__avatar(src=loggedInUser.avatarUrl)
+                                img.header__avatar(src=loggedInUser.avatarUrl crossorigin)
                             else
-                                img.header__avatar(src="/" + loggedInUser.avatarUrl)   
+                                img.header__avatar(src=loggedInUser.avatarUrl crossorigin)   
                 li 
                     a(href="/users/edit") Edit Profile 
                 li 
