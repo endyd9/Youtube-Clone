@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, require: true, unique: true },
   avatarUrl: {
     type: String,
-    default: "upload/avatars/8bef8cca78a6e16bfed6791e885d1c4e",
+    default: "https://dy-wetube.s3.ap-northeast-2.amazonaws.com/R1280x0.png",
   },
   socialOnly: { type: Boolean, default: false },
   username: { type: String, require: true, unique: true },
