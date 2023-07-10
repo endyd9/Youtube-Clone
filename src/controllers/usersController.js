@@ -167,6 +167,7 @@ export const postEdit = async (req, res) => {
       errorMassage: "The username/email already taken.",
     });
   }
+  const isProduction = process.env.NODE_ENV === "production";
 
   const updateUser = await User.findByIdAndUpdate(
     _id,

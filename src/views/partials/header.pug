@@ -13,11 +13,17 @@ header
                     a(href=`/users/${loggedInUser._id}`)
                         if loggedInUser.avatarUrl === ""
                             span 😃
-                        else
-                            if loggedInUser.avatarUrl.includes("github")
-                                img.header__avatar(src=loggedInUser.avatarUrl crossorigin)
-                            else
-                                img.header__avatar(src=loggedInUser.avatarUrl crossorigin)   
+                        else 
+                            if isProduction
+                                if loggedInUser.avatarUrl.includes("github")
+                                    img.header__avatar(src=loggedInUser.avatarUrl crossorigin)
+                                else
+                                    img.header__avatar(src=loggedInUser.avatarUrl crossorigin)   
+                            else 
+                                if loggedInUser.avatarUrl.includes("github")
+                                    img.header__avatar(src=loggedInUser.avatarUrl crossorigin)
+                                else
+                                    img.header__avatar(src="/" + loggedInUser.avatarUrl crossorigin)   
                 li 
                     a(href="/users/edit") Edit Profile 
                 li 
