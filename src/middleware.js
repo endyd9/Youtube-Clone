@@ -19,6 +19,7 @@ const s3VideoUploader = multerS3({
   s3: s3,
   bucket: "dy-wetube/videos",
   acl: "public-read",
+  contentType: multerS3.AUTO_CONTENT_TYPE,
 });
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -59,7 +60,7 @@ export const avatarUploadFiles = multer({
 export const videoUploadFiles = multer({
   dest: "upload/videos/",
   limits: {
-    fileSize: 10000000,
+    fileSize: 50000000,
   },
   storage: isProduction ? s3VideoUploader : undefined,
 });
