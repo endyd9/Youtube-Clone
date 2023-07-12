@@ -25,7 +25,7 @@ const downloadFile = (fileUrl, fileName) => {
 const handelDownload = async () => {
   actionBtn.removeEventListener("click", handelDownload);
 
-  actionBtn.innerText = "Transcording...";
+  actionBtn.innerText = "인코딩중...";
 
   actionBtn.disabled = true;
 
@@ -69,13 +69,13 @@ const handelDownload = async () => {
   URL.revokeObjectURL(videoFile);
 
   actionBtn.disabled = false;
-  actionBtn.innerText = "Record Agin...";
+  actionBtn.innerText = "다시 찍기";
   actionBtn.addEventListener("click", handleStart);
 };
 
 const handleStart = () => {
   actionBtn.style.color = "red";
-  actionBtn.innerText = "Stop recording";
+  actionBtn.innerText = "녹화 종료";
   actionBtn.removeEventListener("click", handleStart);
   actionBtn.addEventListener("click", handleStop);
   recorder = new MediaRecorder(stream);
@@ -92,7 +92,7 @@ const handleStart = () => {
 
 const handleStop = () => {
   actionBtn.style.color = "";
-  actionBtn.innerText = "Download recording";
+  actionBtn.innerText = "녹화 다운로드 하기";
   actionBtn.removeEventListener("click", handleStop);
   actionBtn.addEventListener("click", handelDownload);
   recorder.stop();
