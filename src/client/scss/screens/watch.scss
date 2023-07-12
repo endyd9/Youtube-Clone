@@ -27,45 +27,45 @@
   }
 }
 
-.video__add-comments {
+#comments__contaniner {
   position: relative;
-  margin-top: 150px;
-}
-#commentForm {
-  text-align: right;
-  textarea {
-    border-radius: 7px;
-    width: 100%;
-    height: 20px;
-    resize: none;
+  top: 50px;
+  #commentForm {
+    text-align: right;
+    textarea {
+      border-radius: 7px;
+      width: 100%;
+      height: 20px;
+      resize: none;
+    }
+    button {
+      margin-top: 10px;
+      width: 50px;
+      height: 20px;
+      background-color: #717171;
+      color: white;
+      border-radius: 10px;
+      border: none;
+    }
   }
-  button {
-    margin-top: 10px;
-    width: 50px;
-    height: 20px;
-    background-color: #717171;
-    color: white;
-    border-radius: 10px;
-    border: none;
-  }
-}
 
-.video__comments {
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
-  .video__comment {
-    padding: 10px;
-    border-radius: 9999px;
-    background-color: white;
-    color: black;
-    margin-bottom: 10px;
-    #comment {
-      max-width: 30px;
-      word-wrap: break-word;
+  .video__comments {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    .video__comment {
+      padding: 10px;
+      border-radius: 9999px;
+      background-color: white;
+      color: black;
+      margin-bottom: 10px;
+      #comment {
+        max-width: 30px;
+        word-wrap: break-word;
+      }
     }
   }
 }
