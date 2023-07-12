@@ -11,13 +11,13 @@ block content
         label(for="video") 비디오
         br
         br
-        input(type="file", name="video" accept="video/*" id="video")
+        input(type="file", name="video" accept="video/*" id="video" required)
         br
         br
         label(for="thumb") 썸네일
         br
         br
-        input(type="file", name="thumb" accept="image/*" id="thumb")
+        input(type="file", name="thumb" accept="image/*" id="thumb" required)
         input(name="title", placeholder="제목", required, type="text", maxlength=80)
         input(name="description", placeholder="설명", required, type="text", minlength=0, maxlength=100)
         input(name="hashtags", placeholder="콤마(,)로 구분하여 해시태그", required, type="text")
