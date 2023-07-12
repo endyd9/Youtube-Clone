@@ -3,7 +3,7 @@ include mixins/video
 
 block content 
     form(method="get").search__form
-        input(type="text" placeholder="Search by title" name="keyword")
+        input(type="text" placeholder="제목으로 검색하기" name="keyword")
         button 
             i.fas.fa-search
    
@@ -11,4 +11,4 @@ block content
         each video in videos
             +video(video)
         else
-            span.empty__massage No Videos Here
+            span.empty__massage 비디오가 없습니다

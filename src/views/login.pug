@@ -4,10 +4,10 @@ block content
     if errorMassage
         span=errorMassage
     form(method="post")
-        input(placeholder="username" name="username", type="text" required)
-        input(placeholder="pass" name="password", type="password" required)
-        input(type="submit", value="Login")
+        input(placeholder="아이디" name="username", type="text" required)
+        input(placeholder="비밀번호" name="password", type="password" required)
+        input(type="submit", value="로그인")
         include partials/social-login
     div.auth-switch 
-        span Don't have an account? 
-        a(href="/join")  Create one Now &rarr; 
+        span 아이디가 없나요? 
+        a(href="/join")  회원가입하기 &rarr; 

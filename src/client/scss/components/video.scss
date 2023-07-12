@@ -16,6 +16,9 @@
     .video-mixin__meta {
       margin-top: 5px;
       font-size: 12px;
+      span {
+        color: rgb(186, 186, 186);
+      }
     }
   }
 }

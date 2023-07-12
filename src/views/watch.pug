@@ -1,6 +1,12 @@
 extends base
 
 block content
+
+    if String(video.owner._id) === String(loggedInUser._id)
+        div.edit__video
+            a(href=`${video.id}/edit`) 비디오 수정 &rarr; &nbsp; |
+            a(href=`${video.id}/delete`) &nbsp; 비디오 삭제 &rarr;
+
     div#videoContainer(data-id=video._id)
         if isProduction 
             video(src=video.fileUrl autoplay=true  crossorigin)
@@ -26,26 +32,28 @@ block content
 
 
         div.video__data
-        p.video__title=video.title
-        small.video__owner Uploaded by 
-            a(href=`/users/${video.owner._id}`)=video.owner.name
-        small.video__createdAt=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
-        if String(video.owner._id) === String(loggedInUser._id)
-            a(href=`${video.id}/edit`) Edit Video &rarr;
-            br
-            a(href=`${video.id}/delete`) Delete Video &rarr;
+            p.video__title=video.title
+            small.video__owner
+                small 게시자
+                a( href=`/users/${video.owner._id}`) #{video.owner.name}
+            small.video__views
+                span 조회수 #{video.meta.views} 회
+            small.video__createdAt
+                span=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
+
     if loggedIn
         div.video__add-comments
             form.video__comment-form#commentForm
-                textarea(cols="30", rows="10", placeholder="Write a nice commment...")
-                button(type="button") Add Comment
+                textarea(cols="30", rows="10", placeholder="댓글 추가")
+                button(type="button") 댓글
+            
     div.video__comments
         ul
             each comment in video.comments.reverse()
                 li.video__comment(data-id=comment.id)
                     i.fas.fa-comment
                     span#comment  #{comment.text}
-                    if String(comment.owner._id) === String(loggedInUser._id)
+                    if String(comment.owner._id) === String(loggedInUser._id) || String(video.owner._id) === String(loggedInUser._id)
                         span#deleteBtn.deleteBtn  ❌
 block scripts
     script(src="/static/js/videoPlayer.js")

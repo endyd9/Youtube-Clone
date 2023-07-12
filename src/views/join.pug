@@ -4,14 +4,14 @@ block content
     if errorMassage
         span=errorMassage
     form(method="post")
-        input(placeholder="name" name="name", type="text" required)
-        input(placeholder="email" name="email", type="email" required)
-        input(placeholder="username" name="username", type="text" required)
-        input(placeholder="pass" name="password", type="password" required)
-        input(placeholder="ConfirmPass" name="password2", type="password2" required)
-        input(placeholder="location" name="location", type="text")
-        input(type="submit", value="Join")
+        input(placeholder="이름" name="name", type="text" required)
+        input(placeholder="이메일" name="email", type="email" required)
+        input(placeholder="아이디" name="username", type="text" required)
+        input(placeholder="비밀번호" name="password", type="password" required)
+        input(placeholder="비밀번호 확인" name="password2", type="password" required)
+        input(placeholder="지역" name="location", type="text")
+        input(style="text-align: center" type="submit", value="가입하기")
         include partials/social-login
     div.auth-switch
-        span Already have an account? 
-        a(href="/login")  Log in Now &rarr; 
+        span 이미 아이디가 있나요?
+        a(href="/login")  로그인 &rarr; 
