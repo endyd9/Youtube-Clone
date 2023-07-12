@@ -41,5 +41,8 @@ app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
 app.use("/api", apiRouter);
+app.use("/*", (req, res) => {
+  res.status(404).render("404", { pageTitle: "Not Found" });
+});
 
 export default app;
