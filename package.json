@@ -12,7 +12,8 @@
     "dev:client": "webpack --mode=development -w",
     "build": "npm run build:server && npm run build:client",
     "build:server": "babel src -d build",
-    "build:client": "webpack --mode=production"
+    "build:client": "webpack --mode=production",
+    "deploy": "npm run build && fly deploy"
   },
   "author": "Me",
   "license": "MIT",
